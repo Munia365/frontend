@@ -1,3 +1,6 @@
+// This is footer section of the website. It contains company info, quick links, contact info, and social media links.
+
+
 import {
   GithubIcon,
   Mail,
