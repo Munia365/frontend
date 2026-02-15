@@ -35,14 +35,14 @@ type ApiResponse<T> = {
 
 export const addressService = {
   getMyAddresses: async () => {
-    return clientFetch<ApiResponse<Address[]>>("/api/address/my-addresses", {
+    return clientFetch<ApiResponse<Address[]>>("api/address/my-addresses", {
       method: "GET",
     });
   },
 
   //  Create address
   createAddress: async (payload: CreateAddressPayload) => {
-    return clientFetch<ApiResponse<Address>>("/api/address", {
+    return clientFetch<ApiResponse<Address>>("api/address", {
       method: "POST",
       body: JSON.stringify(payload),
     });
@@ -50,7 +50,7 @@ export const addressService = {
 
   //  Update address
   updateAddress: async (id: string, payload: Partial<CreateAddressPayload>) => {
-    return clientFetch<ApiResponse<Address>>(`/api/address/${id}`, {
+    return clientFetch<ApiResponse<Address>>(`api/address/${id}`, {
       method: "PUT",
       body: JSON.stringify(payload),
     });
@@ -58,7 +58,7 @@ export const addressService = {
 
   //  Delete address
   deleteAddress: async (id: string) => {
-    return clientFetch<ApiResponse<Address>>(`/api/address/${id}`, {
+    return clientFetch<ApiResponse<Address>>(`api/address/${id}`, {
       method: "DELETE",
     });
   },
